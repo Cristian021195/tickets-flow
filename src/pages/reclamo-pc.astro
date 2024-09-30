@@ -43,6 +43,10 @@ import MainLayout from '../layouts/main-layout.astro';
       });
 
       $reclamo_pc.addEventListener('change', (e:any)=>{
+        state();
+      })
+      
+      function state(){
         const selectedOptions = Array.from($reclamo_pc.querySelectorAll('input[name="internet"]:checked'))
         .map((option:any) => option.value);
         _selectedOptions = selectedOptions;
@@ -50,7 +54,12 @@ import MainLayout from '../layouts/main-layout.astro';
         let opts = '{'+selectedOptions.join(',')+'}';
         // Update the href of the anchor tag
         $link.href = `ticket?plataforma=soportegflash&tipo=pc&opciones=${opts}`;
-      })
+      }
+
+      setTimeout(() => {
+        state();
+      }, 100);
+
     });
   </script>
 </MainLayout>

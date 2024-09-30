@@ -41,16 +41,26 @@ import MainLayout from '../layouts/main-layout.astro';
           window['showToast']("Debes seleccionar al menos una opcion");
         }
       });
+      
 
       $reclamo_internet.addEventListener('change', (e:any)=>{
+        state();
+      })
+
+      function state(){
         const selectedOptions = Array.from($reclamo_internet.querySelectorAll('input[name="internet"]:checked'))
         .map((option:any) => option.value);
         _selectedOptions = selectedOptions;
 
         let opts = '{'+selectedOptions.join(',')+'}';
         // Update the href of the anchor tag
-        $link.href = `ticket?plataforma=soportegflash&tipo=internet&opciones=${opts}`;
-      })
+        $link.href = `/ticket/?plataforma=soportegflash&tipo=internet&opciones=${opts}`;
+      }
+
+      setTimeout(() => {
+        state();
+      }, 100);
+      
     });
   </script>
 </MainLayout>

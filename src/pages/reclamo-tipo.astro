@@ -43,8 +43,17 @@ import MainLayout from '../layouts/main-layout.astro';
 
       $reclamo_tipo.addEventListener('change', (e:any)=>{
         const op = e.target.value;
-        $link.href = 'reclamo-'+op;
+        $link.href = '/reclamo-'+op;
       })
+
+      setTimeout(() => {
+        const $r = document.querySelector('input[type="radio"]:checked') as any;
+        if($r){
+          $link.href = '/reclamo-'+$r.value;
+        }
+      }, 100);
+
+
     });
   </script>
 </MainLayout>

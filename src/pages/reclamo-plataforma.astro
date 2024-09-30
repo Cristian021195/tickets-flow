@@ -44,8 +44,15 @@ import MainLayout from '../layouts/main-layout.astro';
 
       $reclamo_plataforma.addEventListener('change', (e:any)=>{
         const op = e.target.value;
-        $link.href = 'ticket?plataforma='+op;
+        $link.href = '/ticket/?plataforma='+op;
       })
+
+      setTimeout(() => {
+        const $r = document.querySelector('input[type="radio"]:checked') as any;
+        if($r){
+          $link.href = '/ticket/?plataforma='+$r.value;
+        }
+      }, 100);
     });
   </script>
 </MainLayout>

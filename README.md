@@ -41,7 +41,14 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
+| `ntl deploy` | Hacer deploy en netlify luego de hacer build                     |
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Netlify Deploy
+1. `npm run build` contruye el proyecto
+2. `npm install -g netlify-cli@latest` instala la cli de netlify
+3. `ntl deploy` 
+4. Create & configure new site
+5. Agregar nuestra cuenta personal
+6. Site name: algun nombre o vacío
+7. Publish directory `dist` para sitios de Astro
+8. `ntl deploy --prod` (opcional pero recomendado) cuando estamos seguros de tener la url corta de producción
