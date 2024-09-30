@@ -1,0 +1,56 @@
+---
+import MainLayout from '../layouts/main-layout.astro';
+---
+<MainLayout title="Reclamo de Mail">
+  <div class="p-4 rounded-md bg-slate-100 mt-10 text-slate-700 w-1/3 mx-auto">
+    <form class="flex-col" id="reclamo-mail">
+
+      <div class="form-control">
+        <label class="cursor-pointer label">
+          <span>No conecta a Outlook</span>
+          <input type="checkbox" name="internet" value="1" class="checkbox bg-slate-200" />
+        </label>
+      </div>
+      <div class="form-control">
+        <label class="cursor-pointer label">
+          <span>No envia mails</span>
+          <input type="checkbox" name="internet" value="2" class="checkbox bg-slate-200" />
+        </label>
+      </div>
+      <div class="form-control">
+        <label class="cursor-pointer label">
+          <span>Mail de Mendoza</span>
+          <input type="checkbox" name="internet" value="3" class="checkbox bg-slate-200" />
+        </label>
+      </div>
+
+      <div class="text-center mt-5">
+        <a type="button" href="#" id="link" class="btn">Siguiente</a>
+      </div>
+      
+    </form>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const $reclamo_mail = document.getElementById("reclamo-mail") as any;
+      const $link = document.getElementById("link") as HTMLAnchorElement;
+      let _selectedOptions = [];
+
+      $link.addEventListener('click',(e:any)=>{
+        if(e.target.href.includes('#') || _selectedOptions.length === 0){
+          window['showToast']("Debes seleccionar al menos una opcion");
+        }
+      });
+
+      $reclamo_mail.addEventListener('change', (e:any)=>{
+        const selectedOptions = Array.from($reclamo_mail.querySelectorAll('input[name="internet"]:checked'))
+        .map((option:any) => option.value);
+        _selectedOptions = selectedOptions;
+
+        let opts = '{'+selectedOptions.join(',')+'}';
+        // Update the href of the anchor tag
+        $link.href = `ticket?plataforma=soportegflash&tipo=mail&opciones=${opts}`;
+      })
+    });
+  </script>
+</MainLayout>

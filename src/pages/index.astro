@@ -1,16 +1,16 @@
 ---
-
+import IndexCard from '../components/ui/IndexCard.astro';
+import IndexLayout from '../layouts/index-layout.astro';
+import consulta from '../assets/consulta.jpg';
+import reclamo from '../assets/reclamo.jpg';
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<IndexLayout title="Home Page">
+	<div class="w-screen h-screen flex justify-center items-center vert">
+		<div class="flex gap-10">
+			<IndexCard title="Consulta" description="Consultas referidas a blablabla"
+				btn_title="Realizar Consulta" url="./consulta" img={consulta}/>
+			<IndexCard title="Reclamo"description="Reclamos referidos a blablabla"
+				btn_title="Realizar Reclamo" url="./reclamo-tipo" img={reclamo}/>
+		</div>
+	</div>
+</IndexLayout>

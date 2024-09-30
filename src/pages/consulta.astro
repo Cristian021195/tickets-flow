@@ -1,0 +1,50 @@
+---
+import MainLayout from '../layouts/main-layout.astro';
+---
+<MainLayout title="Consulta">
+  <div class="p-4 rounded-md bg-slate-100 mt-10 text-slate-700">
+    <form class="grid grid-cols-2 gap-5">
+
+      <div class="col-span-1">
+        <div>
+          <label for="nombre-apellido">Nombre y Apellido: </label>
+          <br>
+          <input id="nombre-apellido" name="nombre-apellido" type="text" placeholder="Type here" 
+          class="input w-full bg-white" />
+        </div>
+
+        <div class="mt-4">
+          <label for="mail">Mail: </label>
+          <br>
+          <input id="mail" name="mail" type="text" placeholder="Type here" 
+          class="input w-full bg-white" />
+        </div>
+
+        <div class="mt-4">
+          <label for="sucursal">Sucursal: </label>
+          <br>
+          <input id="sucursal" name="sucursal" type="text" placeholder="Type here" 
+          class="input w-full bg-white" />
+        </div>
+
+        <div class="mt-4">
+          <label for="telefono">Telefono: </label>
+          <br>
+          <input id="telefono" name="telefono" type="text" placeholder="Type here" 
+          class="input w-full bg-white" />
+        </div>
+      </div>
+
+      <div class="col-span-1 relative">
+        <div>
+          <label for="detalle">Detalle de la consulta: </label>
+          <textarea id="detalle" name="detalle" class="textarea w-full mt-2 bg-white" rows="7" placeholder="Bio"></textarea>
+        </div>
+        <div class="absolute w-full text-end bottom-0">
+          <button type="button" class="btn w-1/3">Enviar</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</MainLayout>

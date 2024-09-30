@@ -1,0 +1,15 @@
+---
+import "../global.css"
+import Head from '../components/html/Head.astro';
+//import BaseHead from '../components/BaseHead.astro';
+//import Footer from '../components/Footer.astro';
+const { title } = Astro.props;
+---
+<html lang="es" class="bg-slate-50 [&_h1]:text-blue-800">
+  <Head/>
+  <body>
+    <main>
+      <slot /> <!-- your content is injected here -->
+    </main>
+  </body>
+</html>
