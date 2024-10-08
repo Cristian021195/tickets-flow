@@ -1,12 +1,14 @@
 ---
 import "../global.css"
 import Head from '../components/html/Head.astro';
+import Navbar from "../components/html/Navbar.astro";
 //import BaseHead from '../components/BaseHead.astro';
 //import Footer from '../components/Footer.astro';
 const { title } = Astro.props;
 ---
-<html lang="es" class="bg-slate-50 [&_h1]:text-blue-800">
+<html lang="es">
   <Head/>
+  <Navbar/>
   <body>
     <main>
       <slot /> <!-- your content is injected here -->

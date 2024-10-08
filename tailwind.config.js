@@ -8,7 +8,7 @@ export default {
   plugins: [require('daisyui')],
   daisyui:{
     themes: true, // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
-    darkTheme: "aqua", // name of one of the included themes for dark mode
+    darkTheme: "valentine", // name of one of the included themes for dark mode
   }
 }
 
