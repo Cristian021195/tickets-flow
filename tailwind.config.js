@@ -3,7 +3,11 @@ export default {
   content: ['./src/**/*.{astro,html,svelte,vue,js,ts,jsx,tsx}'],
   darkMode: 'selector',
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'hero-pattern': "url('/bg-dna.svg')"
+      }
+    },
   },
   plugins: [require('daisyui')],
   daisyui:{
