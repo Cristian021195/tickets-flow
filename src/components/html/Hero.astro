@@ -1,7 +1,13 @@
+---
+import { Image } from "astro:assets";
+import main_img from "../../assets/main-img.png";
+---
+
 <div class="hero min-h-screen">
     <div class="hero-content flex-col lg:flex-row-reverse">
-        <img
-            src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
+        <Image
+            alt="Main iamge"
+            src={main_img}
             class="max-w-sm rounded-lg shadow-2xl"
         />
         <div>
